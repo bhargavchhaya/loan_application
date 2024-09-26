@@ -68,6 +68,9 @@ class LoanService{
                 $static_columns,
                 $dynamic_columns
             )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+
+        DB::statement("DROP TABLE IF EXISTS $tablename");
+        
         DB::statement($finalSql);
     }
 
